@@ -14,6 +14,7 @@ test('counter increments and decrements when the buttons are clicked', () => {
   document.body.append(div)
 
   ReactDOM.render(<Counter />, div)
+  console.log(div.innerHTML)
   const [decrement, increment] = div.querySelectorAll('button')
   const message = div.firstChild.querySelector('div')
 
