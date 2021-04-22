@@ -18,8 +18,16 @@ test('counter increments and decrements when the buttons are clicked', () => {
   const message = div.firstChild.querySelector('div')
 
   expect(message.textContent).toBe('Current count: 0')
-  increment.click()
+  increment.dispatchEvent(new MouseEvent('click', {
+    bubbles: true,
+    cancelable: true,
+    button: 0,
+  }))
   expect(message.textContent).toBe('Current count: 1')
-  decrement.click()
+  decrement.dispatchEvent(new MouseEvent('click', {
+    bubbles: true,
+    cancelable: true,
+    button: 0,
+  }))
   expect(message.textContent).toBe('Current count: 0')
 })
